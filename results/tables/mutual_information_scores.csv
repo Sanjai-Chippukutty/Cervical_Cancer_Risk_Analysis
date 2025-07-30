@@ -1,0 +1,36 @@
+Feature,Mutual_Information
+Schiller,0.13273161145560097
+Hinselmann,0.05782241868413962
+Citology,0.02920741033406493
+Age,0.01988488586137338
+STDs:vaginal condylomatosis,0.015988672550487193
+STDs: Number of diagnosis,0.014052512352229263
+STDs:molluscum contagiosum,0.010739560018838468
+Dx,0.010197613293739582
+STDs:pelvic inflammatory disease,0.009786324733922935
+IUD (years),0.00849757171896437
+Hormonal Contraceptives (years),0.006579079704449153
+STDs:condylomatosis,0.006540989466944147
+STDs:HIV,0.003864616751152905
+STDs:cervical condylomatosis,0.0035473321394463575
+STDs:syphilis,0.00274453756390991
+Num of pregnancies,0.002663891387833406
+Smokes,0.002462187317137099
+Dx:Cancer,0.0024178349268750843
+Dx:HPV,0.001601517135035646
+STDs: Time since last diagnosis,0.00069883674577631
+First sexual intercourse,0.00035075843983656263
+Number of sexual partners,0.0
+STDs (number),0.0
+Smokes (packs/year),0.0
+Smokes (years),0.0
+Hormonal Contraceptives,0.0
+IUD,0.0
+STDs:vulvo-perineal condylomatosis,0.0
+STDs,0.0
+STDs: Time since first diagnosis,0.0
+STDs:AIDS,0.0
+STDs:genital herpes,0.0
+STDs:HPV,0.0
+STDs:Hepatitis B,0.0
+Dx:CIN,0.0

@@ -1,0 +1,36 @@
+Feature,Importance_Mean,Importance_Std
+Schiller,0.023255813953488413,0.006879162538487938
+Hinselmann,0.011046511627906996,0.0017441860465116311
+Citology,0.005813953488372103,0.0
+Number of sexual partners,0.0029069767441860517,0.0059575295150928
+Age,0.0011627906976744208,0.004350764403225521
+STDs: Time since first diagnosis,0.0,0.0
+Smokes,0.0,0.0
+IUD,0.0,0.0026000790436044112
+Smokes (years),0.0,0.0
+Smokes (packs/year),0.0,0.0
+Hormonal Contraceptives,0.0,0.0
+STDs:vaginal condylomatosis,0.0,0.0
+STDs:vulvo-perineal condylomatosis,0.0,0.0
+STDs:syphilis,0.0,0.0
+STDs:cervical condylomatosis,0.0,0.0
+STDs:pelvic inflammatory disease,0.0,0.0
+STDs:condylomatosis,0.0,0.0
+STDs (number),0.0,0.0
+STDs,0.0,0.0
+Dx:HPV,0.0,0.0
+STDs: Number of diagnosis,0.0,0.0
+STDs:HPV,0.0,0.0
+STDs:genital herpes,0.0,0.0
+STDs:Hepatitis B,0.0,0.0
+STDs:molluscum contagiosum,0.0,0.0
+STDs:AIDS,0.0,0.0
+STDs:HIV,0.0,0.0
+Dx,0.0,0.0
+Dx:CIN,0.0,0.0
+Dx:Cancer,0.0,0.0
+STDs: Time since last diagnosis,0.0,0.0
+IUD (years),-0.0005813953488372104,0.0017441860465116311
+First sexual intercourse,-0.0011627906976744208,0.004350764403225521
+Num of pregnancies,-0.0023255813953488415,0.002848243886957189
+Hormonal Contraceptives (years),-0.004069767441860472,0.0063953488372093135
