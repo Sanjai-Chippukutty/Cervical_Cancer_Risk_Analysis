@@ -5,11 +5,11 @@ import joblib
 import os
 
 # -------------------
-# Load model & scaler
+# Load model & scaler (relative path for deployment)
 # -------------------
-base_dir = "C:/Users/sanja/3. Cervical_Cancer_Risk_Analysis/Cervical_Cancer_Risk_Analysis"
-model_path = os.path.join(base_dir, "models", "cervical_cancer_rf_model_10features.pkl")
-scaler_path = os.path.join(base_dir, "models", "scaler_10features.pkl")
+base_dir = os.path.dirname(__file__)
+model_path = os.path.join(base_dir, "cervical_cancer_rf_model_10features.pkl")
+scaler_path = os.path.join(base_dir, "scaler_10features.pkl")
 
 model = joblib.load(model_path)
 scaler = joblib.load(scaler_path)
@@ -47,10 +47,8 @@ with st.form("input_form"):
 # Prediction
 # -------------------
 if submit:
-    # Convert Yes/No to numeric
     STD_HPV_val = 1 if STD_HPV == "Yes" else 0
 
-    # Create input array
     input_data = np.array([[
         Age,
         Number_of_sexual_partners,
@@ -64,20 +62,13 @@ if submit:
         STD_HPV_val
     ]])
 
-    # Scale
     input_scaled = scaler.transform(input_data)
-
-    # Predict
     prediction = model.predict(input_scaled)[0]
     probability = model.predict_proba(input_scaled)[0][1]
 
-    # -------------------
-    # Show results
-    # -------------------
     if prediction == 1:
-        st.error(f" High Risk of Cervical Cancer — Probability: {probability:.2%}")
+        st.error(f"High Risk of Cervical Cancer — Probability: {probability:.2%}")
     else:
-        st.success(f" Low Risk of Cervical Cancer — Probability: {probability:.2%}")
+        st.success(f"Low Risk of Cervical Cancer — Probability: {probability:.2%}")
 
     st.markdown("**Note:** This prediction is based on the trained model and should not replace professional medical advice.")
-
