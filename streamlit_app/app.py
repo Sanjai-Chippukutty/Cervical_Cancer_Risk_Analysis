@@ -5,20 +5,24 @@ import joblib
 import os
 
 # -------------------
-# Load model & scaler (relative path for deployment)
+# Load model & scaler using relative paths
 # -------------------
-base_dir = os.path.dirname(__file__)
-model_path = os.path.join(base_dir, "cervical_cancer_rf_model_10features.pkl")
-scaler_path = os.path.join(base_dir, "scaler_10features.pkl")
+BASE_DIR = os.path.dirname(__file__)
+MODEL_FILE = os.path.join(BASE_DIR, "cervical_cancer_rf_model_10features.pkl")
+SCALER_FILE = os.path.join(BASE_DIR, "scaler_10features.pkl")
 
-model = joblib.load(model_path)
-scaler = joblib.load(scaler_path)
+try:
+    model = joblib.load(MODEL_FILE)
+    scaler = joblib.load(SCALER_FILE)
+except FileNotFoundError:
+    st.error(" Model or scaler file not found. Make sure both `.pkl` files are in the same folder as `app.py`.")
+    st.stop()
 
 # -------------------
 # Page setup
 # -------------------
 st.set_page_config(page_title="Cervical Cancer Risk Analysis", layout="centered")
-st.title("🩺 Cervical Cancer Risk Prediction")
+st.title(" Cervical Cancer Risk Prediction")
 st.markdown("Fill in the details below to estimate your **risk** based on health and lifestyle factors.")
 
 # -------------------
@@ -62,13 +66,18 @@ if submit:
         STD_HPV_val
     ]])
 
-    input_scaled = scaler.transform(input_data)
-    prediction = model.predict(input_scaled)[0]
-    probability = model.predict_proba(input_scaled)[0][1]
+    try:
+        input_scaled = scaler.transform(input_data)
+        prediction = model.predict(input_scaled)[0]
+        probability = model.predict_proba(input_scaled)[0][1]
+    except Exception as e:
+        st.error(f"Prediction error: {e}")
+        st.stop()
 
+    # Show results
     if prediction == 1:
-        st.error(f"High Risk of Cervical Cancer — Probability: {probability:.2%}")
+        st.error(f" High Risk of Cervical Cancer — Probability: {probability:.2%}")
     else:
-        st.success(f"Low Risk of Cervical Cancer — Probability: {probability:.2%}")
+        st.success(f" Low Risk of Cervical Cancer — Probability: {probability:.2%}")
 
     st.markdown("**Note:** This prediction is based on the trained model and should not replace professional medical advice.")
